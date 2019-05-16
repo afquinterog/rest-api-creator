@@ -1,6 +1,6 @@
-# Project Title
+# Simple resource manager
 
-Simple resource manager
+Create simple api endpoints for any kind of resource actually support up to 1 level nesting.
 
 ## Getting Started
 
