@@ -5,9 +5,9 @@ $isNestedResource = Request::isNestedResource();
 if($isNestedResource){
   $parent = Request::getParent();
   $parentId = Request::getParentId();
-  $resource = $app['database']->saveResourceChild($resource, $parent, $parentId);
+  $resource = App::get("database")->saveResourceChild($resource, $parent, $parentId);
 }else{
-  $resource = $app['database']->saveResource($resource);  
+  $resource = App::get("database")->saveResource($resource);  
 }
 
 if($resource){

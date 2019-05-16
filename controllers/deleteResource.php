@@ -1,7 +1,7 @@
 <?php
 $resource = Request::getResourceName();
 $id = Request::getResourceId() ?? 0;
-$resource = $app['database']->deleteResource($resource, $id);  
+$resource = App::get("database")->deleteResource($resource, $id);  
 
 if($resource){
   http_response_code(200);

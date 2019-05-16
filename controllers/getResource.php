@@ -2,25 +2,24 @@
 $resource = Request::getResourceName();
 $id = Request::getResourceId() ?? 0;
 $isNestedResource = Request::isNestedResource();
-$database = App::get("database");
 
 if( $isNestedResource){
   $parent = Request::getParent();
   $parentId = Request::getParentId();
   
   if($id > 0){
-    $resources = $database->getResourceById($resource, $id);
+    $resources =  App::get("database")->getResourceById($resource, $id);
   }
   else{
-    $resources = $database->getResourceChildData($resource, $parent, $parentId );
+    $resources =  App::get("database")->getResourceChildData($resource, $parent, $parentId );
   }
 
 }else{
   if($id > 0){
-    $resources = $database->getResourceById($resource, $id);
+    $resources =  App::get("database")->getResourceById($resource, $id);
   }
   else{
-    $resources = $database->getResourceData($resource );
+    $resources =  App::get("database")->getResourceData($resource );
   }
 }
 
