@@ -1,11 +1,13 @@
 <?php
 $app = [];
-$app['config'] = require 'config.php';
-$app['resources'] = require 'resources.php';
+
+App::bind('config', require 'config.php' );
+App::bind('resources', require 'resources.php' );
 
 
-$app['database'] = new QueryBuilder(
-  Connection::make($app['config']['database']),
+App::bind('database', new QueryBuilder(
+  Connection::make(App::get('config')['database']),
   $app['resources'],
   Request::putParameters()
+  ) 
 );

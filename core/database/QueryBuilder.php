@@ -27,7 +27,7 @@ class QueryBuilder
 
     $filter = $params['filter'] ?? "";
 
-    $relations = $this->resources[$table]['hasMany'];
+    $relations = App::get('resources')[$table]['hasMany'];
     
     $statement = $this->pdo->prepare("select * from {$table}");
 
