@@ -89,7 +89,6 @@ class Request
 
   public static function putParameters()
   {
-
     if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
 
       parse_str(file_get_contents("php://input"), $_PUT);
@@ -102,7 +101,7 @@ class Request
       $_REQUEST = array_merge($_REQUEST, $_PUT);
     }
 
-    return $_PUT;
+    return $_PUT ?? [];
   }
 
 
