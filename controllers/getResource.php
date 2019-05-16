@@ -27,5 +27,5 @@ if($resources){
   echo json_encode($resources);
 }
 else{
-  http_response_code(404);
+  echo "No data available";
 }

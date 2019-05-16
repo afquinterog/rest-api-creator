@@ -61,7 +61,7 @@ class Request
 
     } else {
 
-      return $tokens[1];
+      return $tokens[1] ?? "";
 
     }
   }
