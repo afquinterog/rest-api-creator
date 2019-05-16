@@ -10,9 +10,7 @@ class Request
   }
 
   public function queryString(){
-
     return $_GET;
-    
   }
 
   public static function method()
