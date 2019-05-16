@@ -1,4 +1,5 @@
 <?php
+$router->addGetRoute('', 'controllers/index.php');
 
 $router->addResource('contacts');
 
