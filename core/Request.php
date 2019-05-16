@@ -10,26 +10,9 @@ class Request
   }
 
   public function queryString(){
-    $uri = $_SERVER['REQUEST_URI'];
-    $queryFilters = [];
 
-    if (strpos($uri, '?')) {
-      $uri = explode("?", $uri);
-      if (strpos($uri[1], '&')) {
-        $params  = explode("&", $uri[1]);
-        foreach($params as $param){
-          $param = explode("=", $param);
-          $queryFilters[$param[0]] = $param[1];
-        }
-      }
-      else{
-        $param = explode("=", $uri[1]);
-        $queryFilters[$param[0]] = $param[1];
-        $params  = $uri[1];
-      }
-      return $queryFilters;
-    }
-    return "";
+    return $_GET;
+    
   }
 
   public static function method()
