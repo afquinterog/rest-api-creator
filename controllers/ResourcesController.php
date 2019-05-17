@@ -3,6 +3,10 @@
 class ResourcesController
 {
 
+  public function index(){
+    echo "Api ready";
+  }
+
   public function getResource()
   {
     $resource = Request::getResourceName();
