@@ -1,5 +1,9 @@
 <?php
-require 'Inflect.php';
+
+namespace App\Core\Database;
+
+use App\Core\App;
+use App\Core\Request;
 /**
  * Abstract sql queries from the application
  */
@@ -33,7 +37,7 @@ class QueryBuilder
 
     $statement->execute();
 
-    $data = $statement->fetchAll(PDO::FETCH_CLASS);
+    $data = $statement->fetchAll(\PDO::FETCH_CLASS);
 
     foreach($data as $item){
       foreach( $relations as $relation){
@@ -64,7 +68,7 @@ class QueryBuilder
 
     $statement->execute();
 
-    return $statement->fetchAll(PDO::FETCH_CLASS);
+    return $statement->fetchAll(\PDO::FETCH_CLASS);
   }
 
   public function getResourceById($table, $id)
@@ -73,7 +77,7 @@ class QueryBuilder
 
     $statement->execute();
 
-    $mainData = $statement->fetchAll(PDO::FETCH_CLASS);
+    $mainData = $statement->fetchAll(\PDO::FETCH_CLASS);
 
     return $mainData;
   }

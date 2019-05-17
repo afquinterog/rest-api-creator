@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Core;
+
 /**
  * Handles http request information
  */

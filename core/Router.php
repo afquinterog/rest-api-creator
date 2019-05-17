@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Core;
+
+
 /**
  * Basic http router implementation
  */
@@ -71,6 +74,7 @@ class Router
   }
 
   protected function callAction($controller, $action){
+    $controller = "App\Controllers\\{$controller}";
     $instance = new $controller;
 
     if(! method_exists($instance, $action)){

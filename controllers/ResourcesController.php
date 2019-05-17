@@ -1,5 +1,10 @@
 <?php 
 
+namespace App\Controllers;
+
+use App\Core\Request;
+use App\Core\App;
+
 class ResourcesController
 {
 
