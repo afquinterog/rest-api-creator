@@ -64,7 +64,6 @@ class Router
     $actualRoutes = $this->routesLink[Request::method()];
 
     if (array_key_exists($uri, $this->$actualRoutes)) {
-      //return $this->$actualRoutes[$uri];
       return $this->callAction( ... explode("@", $this->$actualRoutes[$uri] ) );
     }
 
